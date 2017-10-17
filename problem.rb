@@ -1,5 +1,4 @@
 # => EXERCISE 1
-
 # Write a method that converts this array
 #
 # song = [["row", 3], ["your", 1], ["boat", 1]]
@@ -41,7 +40,6 @@ end
 p convert_song_original_array(song)
 
 # => EXERCISE 2
-
 # Write a method to that converts this array
 #
 # [ {a: 5, b: 5},
@@ -58,10 +56,7 @@ new_h = [ {a: 5, b: 5},
   {a: 2, b: 1}]
 
 def convert_hash_to_sum_array(h)
-  h.map! do |nums|
-    nums.values.sum
-  end
-  h
+  h.map { |nums| nums.values.sum }
 end
 
 p convert_hash_to_sum_array(new_h)
