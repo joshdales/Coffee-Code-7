@@ -22,4 +22,18 @@ def convert_song_new_array(song)
   return new_song
 end
 
-puts convert_song_new_array(song)
+# puts convert_song_new_array(song)
+
+# .map will transform a new array with the same number of results
+# [["row", "row", "row"], ["your"], ["boat"]]
+def convert_song_original_array(song)
+  song.map! do |lyric|
+    word = lyric[0]
+    number = lyric[1]
+  (word * number).scan(word) # returns an array of instanaces of word
+  end
+  song.flatten!
+  return song
+end
+
+puts convert_song_original_array(song)
