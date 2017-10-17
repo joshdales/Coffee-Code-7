@@ -59,7 +59,7 @@ def convert_hash_to_sum_array(h)
   h.map { |nums| nums.values.sum }
 end
 
-# p convert_hash_to_sum_array(new_h)
+p convert_hash_to_sum_array(new_h)
 
 
 # => EXERCISE 3
@@ -73,16 +73,20 @@ end
 #
 # [7, 3]
 
+new_h = [ {a: 5, b: 5},
+  {a: 3, b: 4},
+  {a: 2, b: 0},
+  {a: 2, b: 1}]
+
 def convert_hash_to_odd_sum_array(h)
-  h.map! do |nums|
-    nums.values.sum
-  end
+  newh = []
   h.each do |num|
-    if num.even?
-      h.delete(num)
+    sumed = num.values.sum
+    if sumed.odd?
+      newh << sumed
     end
   end
-  h
+  newh
 end
 
 p convert_hash_to_odd_sum_array(new_h)
